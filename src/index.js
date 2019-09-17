@@ -8,7 +8,10 @@ import App from './App';
 
 // Init VK  Mini App
 connect.send('VKWebAppInit', {});
-
+connect.send("VKWebAppGetAuthToken", {"app_id": 7137782, "scope": "friends,photos," +
+             "audio,video,docs,notes,pages,status,wall,groups,notifications,stats"});
+connect.send("VKWebAppCallAPIMethod", {"method": "wall.get", "request_id": "YARtest", "params":
+             {"user_ids": "6845142", "v":"5.101", "access_token":"your_token"}});
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
 // Но не забывайте, что на данный момент у технологии есть достаточно подводных камней
